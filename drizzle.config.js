@@ -5,6 +5,6 @@ export default {
   schema: "./utils/schema.jsx",
   dialect: "postgresql",
   dbCredentials: {
-    url: "postgresql://ExpenseEasedb_owner:bANzgQYrB01E@ep-shy-dream-a19gin6a.ap-southeast-1.aws.neon.tech/ExpenseEasedb?sslmode=require",
+    url: NEXT_PUBLIC_DATABASE_URL,
   },
 };

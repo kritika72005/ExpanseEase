@@ -10,29 +10,25 @@ import Link from "next/link";
 function Sidenav() {
   const menuList = [
     {
-      key: 1,
       id: 1,
       name: "Dashboard",
       icon: LayoutGrid,
       path: "/dashboard",
     },
     {
-      key: 2,
-      id: 1,
+      id: 2,
       name: "Budgets",
       icon: PiggyBank,
       path: "/dashboard/budgets",
     },
     {
-      key: 3,
-      id: 2,
-      name: "Expanses",
+      id: 3,
+      name: "Expenses",
       icon: ReceiptText,
-      path: "/dashboard/expanses",
+      path: "/dashboard/expenses",
     },
     {
-      key: 4,
-      id: 1,
+      id: 4,
       name: "Upgrade",
       icon: ShieldCheck,
       path: "/dashboard/upgrade",

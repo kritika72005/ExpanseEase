@@ -1,8 +1,17 @@
+import Link from "next/link";
 import React from "react";
 
 function BudgetItem({ budget }) {
+  const calculateProgressPrec = () => {
+    // (spend/total)
+    const perc = (budget.totalSpend / budget.amount) * 100;
+    return perc.toFixed(2);
+  };
   return (
-    <div className="p-5 border rounded-lg hover:shadow-md cursor-pointer mt-5 ">
+    <Link
+      href={"/dashboard/expanses/" + budget?.id}
+      className="p-5 border rounded-lg hover:shadow-md cursor-pointer mt-5 h-[170px]"
+    >
       <div className="flex gap-2 items-center justify-between">
         <div className="text-2xl p-2 items-center">
           <h2 className="text-3xl p-3 px-4 bg-slate-100 rounded-full">
@@ -25,16 +34,19 @@ function BudgetItem({ budget }) {
               ${budget.amount - budget.totalSpend} Remaining
             </h2>
           </div>
-        </div>
-        <div className="mt-5">
-          <div className="w-full bg-slate-300 h-2 rounded-full"></div>
-          <div
-            className="w-[40%]
-           bg-primary h-2 rounded-full"
-          ></div>
+          <div className="mt-5">
+            <div className="w-full bg-slate-300 h-2 rounded-full"></div>
+            <div
+              className="
+           bg-primary h-2 rounded-full mt-5 flex"
+              style={{
+                width: `${calculateProgressPrec()}%`,
+              }}
+            ></div>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
